@@ -12,6 +12,7 @@
 h3 {
     font-size: 1.8rem;
     margin-bottom: 5%;
+    margin-top: 5%;
     font-weight: bold;
 }
 
@@ -25,5 +26,8 @@ label{
     }
     .btn-wrapper button {
         width: 40%;
+    }
+    .form-group{
+        margin-bottom: 1.4rem;
     }
 }
