@@ -6,7 +6,7 @@ import './DoggoOTDCard.css'
 
 const DoggoOTDCard = props => {
 
-    const [doggoOTD, setDoggoOTD] = useState("1303045434508800001")
+    const [doggoOTD, setDoggoOTD] = useState("1303407802275241990")
 
     // useEffect(() => {
     //     const getDoggo = () => {
