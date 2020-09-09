@@ -1,5 +1,4 @@
 import React from 'react';
-import FileUpload from './components/FileUpload';
 import Admin from './components/Admin';
 import Header from './components/Header';
 import { Route } from "react-router-dom";
