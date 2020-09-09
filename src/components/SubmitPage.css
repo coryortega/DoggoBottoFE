@@ -1,0 +1,50 @@
+.wrapper-submit{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    justify-content: space-between;
+}
+
+.form-wrapper{
+    width: 50%;
+}
+
+.doggo-wrapper{
+    width: 50%;
+    border-left: 1px solid grey;
+}
+
+/* .card{
+    border: none;
+} */
+
+p {
+    margin: 15px;
+}
+
+.mention{
+    margin-top: 5px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .wrapper-submit{
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+        justify-content: space-between;
+    }
+
+    .doggo-wrapper{
+        width: 100%;
+        border-top: 1px solid grey;
+        border-left: none;
+        margin-top: 25px;
+        padding-top: 25px;
+    }
+
+    .form-wrapper{
+        width: 100%;
+    }
+}

@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import FileUpload from './components/FileUpload';
+import Admin from './components/Admin';
+import Header from './components/Header';
+import { Route } from "react-router-dom";
 import './App.css';
+import SubmitPage from './components/SubmitPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Route exact path="/" component={SubmitPage}/>
+      <Route exact path="/admin" component={Admin}/>
+      <div class="footer">
+        <p>Copyright DoggoBotto 2020</p>
+      </div>
     </div>
   );
 }

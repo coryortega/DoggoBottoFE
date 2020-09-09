@@ -1,0 +1,24 @@
+.doggo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+h3 {
+    text-align: center;
+}
+
+h3 strong {
+    color: #be1931
+}
+
+@media only screen and (max-width: 600px) {
+
+    .doggo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
