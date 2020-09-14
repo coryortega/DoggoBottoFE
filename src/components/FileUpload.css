@@ -12,12 +12,16 @@
 h3 {
     font-size: 1.8rem;
     margin-bottom: 5%;
-    margin-top: 5%;
+    margin-top: 0%;
     font-weight: bold;
 }
 
 label{
     font-weight: bold;
+}
+
+.red-text{
+    color: red;
 }
 
 @media only screen and (max-width: 600px) {
@@ -30,5 +34,11 @@ label{
     }
     .form-group{
         margin-bottom: 1.4rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        font-weight: bold;
     }
 }

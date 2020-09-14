@@ -13,6 +13,10 @@ h3 strong {
     color: #be1931
 }
 
+.DOTD h3 {
+    margin-bottom: 2.5%;
+}
+
 @media only screen and (max-width: 600px) {
 
     .doggo{
@@ -21,4 +25,9 @@ h3 strong {
         margin-right: auto;
         width: 100%;
     }
+
+    .DOTD h3 {
+        margin-bottom: 5%;
+    }
+    
 }

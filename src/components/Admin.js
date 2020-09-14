@@ -29,12 +29,18 @@ export default function CharacterList() {
     setQuery(event.target.value);
   };
 
-  const handleYes = (id) => {
+  const handleYes = (doggo, id) => {
     axios
       .put(`${process.env.REACT_APP_PUT_KEY}${id}`, { verified: true })
       .then((response) => {
         let doggosFiltered = doggos.filter((el) => el.id !== id);
         setDoggos([...doggosFiltered]);
+
+        axios
+          .post('http://localhost:5000/submit', { doggo })
+          .then((response) => {
+            console.log("doggo sent")
+          })
       })
       .catch((error) => {
         console.error("Server Error", error);
@@ -66,7 +72,7 @@ export default function CharacterList() {
             <button onClick={() => handleNo(doggo.id)} class="btn">
               NO
             </button>
-            <button onClick={() => handleYes(doggo.id)} class="btn1">
+            <button onClick={() => handleYes(doggo, doggo.id)} class="btn1">
               YES
             </button>
           </div>

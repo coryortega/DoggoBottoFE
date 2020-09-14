@@ -4,24 +4,24 @@ import { Tweet } from "react-twitter-widgets";
 import "./DoggoOTDCard.css";
 
 const DoggoOTDCard = (props) => {
-  const [doggoOTD, setDoggoOTD] = useState("1303407802275241990");
+  const [doggoOTD, setDoggoOTD] = useState("1305281586309427200");
 
-  // useEffect(() => {
-  //     const getDoggo = () => {
-  //       axios
-  //         .get('http://localhost:4000/api/posts/images/')
-  //         .then(response => {console.log(response.data)
-  //           setDoggoOTD(response.data);
-  //         })
-  //         .catch(error => {
-  //           console.error('Server Error', error);
-  //         });
-  //     }
-  //     getDoggo();
-  //   }, []);
+  useEffect(() => {
+      const getDoggo = () => {
+        axios
+          .get('https://doggobase.herokuapp.com/api/posts/images/posted')
+          .then(response => {console.log(response.data)
+            setDoggoOTD(response.data);
+          })
+          .catch(error => {
+            console.error('Server Error', error);
+          });
+      }
+      getDoggo();
+    }, []);
 
   return (
-    <div>
+    <div className="DOTD">
       <h3>Doggo of the Day!</h3>
       <div className="doggo">
         <Tweet tweetId={doggoOTD} />

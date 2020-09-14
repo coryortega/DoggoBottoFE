@@ -18,20 +18,23 @@ class FileUpload extends Component {
     this.state = {
       file: null,
       name: "",
+      username: "",
       caption: "",
+      characterCount: false
     };
   }
 
   submitFile = (event) => {
-    if (this.state.file == null || this.state.name == "") {
+    if (this.state.file == null || this.state.name == "" || this.state.caption.length >= 250) {
       alert(
-        "ERROR: Please make sure a doggo image is uploaded along with a name"
+        "ERROR: Please make sure a doggo image is uploaded along with a name and caption count is less than 250"
       );
     } else {
       event.preventDefault();
       const formData = new FormData();
       formData.append("image", this.state.file[0]);
       formData.append("name", this.state.name);
+      formData.append("username", this.state.username);
       formData.append("caption", this.state.caption);
       axios
         .post(process.env.REACT_APP_DB_KEY, formData, {
@@ -40,6 +43,7 @@ class FileUpload extends Component {
           },
         })
         .then((response) => {
+          console.log(response)
           alert(
             "SUCCESS: Your doggo has been sent to DoggoBotto! If approved, you will see it posted in the near future (っ◔◡◔)っ."
           );
@@ -58,8 +62,18 @@ class FileUpload extends Component {
     this.setState({ name: event.target.value });
   };
 
+  handleUsernameUpload = (event) => {
+    this.setState({ username: event.target.value });
+  };
+
   handleCaptionUpload = (event) => {
     this.setState({ caption: event.target.value });
+    if(this.state.caption.length >= 250){
+      this.setState({ characterCount: true })
+    } else {
+      this.setState({ characterCount: false })
+    }
+    console.log(this.state.caption.length)
   };
 
   render() {
@@ -87,6 +101,7 @@ class FileUpload extends Component {
                 type="text"
                 name="username"
                 id="username"
+                onChange={this.handleUsernameUpload}
                 placeholder="Your Twitter username (optional)"
               />
             </FormGroup>
@@ -99,6 +114,7 @@ class FileUpload extends Component {
                 onChange={this.handleCaptionUpload}
                 placeholder="Can be a quote or anything, keep it PG (optional)"
               />
+              <div className={`box ${this.state.characterCount? "red-text" : ""}`}>Characer count: {this.state.caption.length}</div>
             </FormGroup>
             <FormGroup>
               <Label for="exampleFile">File:</Label>
