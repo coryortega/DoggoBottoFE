@@ -4,7 +4,7 @@ import { Tweet } from "react-twitter-widgets";
 import "./DoggoOTDCard.css";
 
 const DoggoOTDCard = (props) => {
-  const [doggoOTD, setDoggoOTD] = useState("1305281586309427200");
+  const [doggoOTD, setDoggoOTD] = useState("1305219747559223298");
 
   useEffect(() => {
       const getDoggo = () => {
