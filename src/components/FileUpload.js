@@ -18,7 +18,7 @@ class FileUpload extends Component {
     this.state = {
       file: null,
       name: "",
-      username: "",
+      username: null,
       caption: "",
       characterCount: false
     };
