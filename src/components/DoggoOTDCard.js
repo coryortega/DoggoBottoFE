@@ -11,7 +11,9 @@ const DoggoOTDCard = (props) => {
         axios
           .get('https://doggobase.herokuapp.com/api/posts/images/posted')
           .then(response => {
-            setDoggoOTD(response.data.twitter_id)
+            if(response.data.twitter_id){
+              setDoggoOTD(response.data.twitter_id)
+            }
           })
           .catch(error => {
             console.error('Server Error', error);

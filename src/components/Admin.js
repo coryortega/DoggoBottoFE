@@ -68,6 +68,7 @@ export default function CharacterList() {
               name={doggo.name}
               image={doggo.img}
               caption={doggo.caption}
+              username={doggo.username}
             />
             <button onClick={() => handleNo(doggo.id)} class="btn">
               NO
