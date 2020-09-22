@@ -1,9 +1,9 @@
 import React from 'react';
-import Admin from './components/Admin';
-import Header from './components/Header';
+import Admin from './components/Admin/Admin';
+import Header from './components/Header/Header';
 import { Route } from "react-router-dom";
 import './App.css';
-import SubmitPage from './components/SubmitPage';
+import SubmitPage from './components/SubmitPage/SubmitPage';
 
 function App() {
   return (

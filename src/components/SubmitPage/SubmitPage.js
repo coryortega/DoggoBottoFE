@@ -1,6 +1,6 @@
 import React from "react";
-import FileUpload from "./FileUpload";
-import DoggoOTDCard from "./DoggoOTDCard";
+import FileUpload from "../FileUpload/FileUpload";
+import DoggoOTDCard from "../DoggoOTDCard/DoggoOTDCard";
 import './SubmitPage.css'
 
 const SubmitPage = () => {

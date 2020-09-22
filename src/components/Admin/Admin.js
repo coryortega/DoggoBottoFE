@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import DoggoCard from "./DoggoCard";
-import "../admin.css";
+import DoggoCard from "../DoggoCard/DoggoCard";
+import "./admin.css";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -35,12 +35,6 @@ export default function CharacterList() {
       .then((response) => {
         let doggosFiltered = doggos.filter((el) => el.id !== id);
         setDoggos([...doggosFiltered]);
-
-        axios
-          .post('http://localhost:5000/submit', { doggo })
-          .then((response) => {
-            console.log("doggo sent")
-          })
       })
       .catch((error) => {
         console.error("Server Error", error);

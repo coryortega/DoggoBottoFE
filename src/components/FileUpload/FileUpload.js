@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import FileUploadForm from "./SubmitPage";
 import {
   Form,
   Button,
@@ -20,17 +19,19 @@ class FileUpload extends Component {
       name: "",
       username: null,
       caption: "",
-      characterCount: false
+      characterCount: false,
+      loading: false
     };
   }
 
   submitFile = (event) => {
     if (this.state.file == null || this.state.name == "" || this.state.caption.length >= 250) {
       alert(
-        "ERROR: Please make sure a doggo image is uploaded along with a name and caption count is less than 250"
+        "ERROR: Please make sure a doggo image is uploaded along with a name and caption count that is less than 250"
       );
     } else {
       event.preventDefault();
+      this.setState({ loading: true })
       const formData = new FormData();
       formData.append("image", this.state.file[0]);
       formData.append("name", this.state.name);
@@ -44,8 +45,18 @@ class FileUpload extends Component {
         })
         .then((response) => {
           console.log(response)
+          this.setState({
+            loading: false,
+            name: "",
+            username: "",
+            caption: "",
+            characterCount: false,
+          })
+          this.setState({
+            username: null
+          })
           alert(
-            "SUCCESS: Your doggo has been sent to DoggoBotto! If approved, you will see it posted in the near future (っ◔◡◔)っ."
+            `SUCCESS: Your doggo has been sent to DoggoBotto! If approved, you will see it posted in the near future (っ◔◡◔)っ.`
           );
         })
         .catch((error) => {
@@ -77,6 +88,7 @@ class FileUpload extends Component {
   };
 
   render() {
+    console.log(this.state.name)
     return (
       <div className="wrapper">
         <div className="form-wrapper">
@@ -86,8 +98,9 @@ class FileUpload extends Component {
               <strong>♥</strong>
             </h3>
             <FormGroup>
-              <Label for="exampleEmail">Doggo Name:</Label>
+              <Label for="name">Doggo Name:</Label>
               <Input
+                value={this.state.name}
                 type="text"
                 name="name"
                 id="exampleEmail"
@@ -98,6 +111,7 @@ class FileUpload extends Component {
             <FormGroup>
               <Label for="username">Twitter Username:</Label>
               <Input
+                value={this.state.username}
                 type="text"
                 name="username"
                 id="username"
@@ -108,6 +122,7 @@ class FileUpload extends Component {
             <FormGroup>
               <Label for="exampleText">Caption:</Label>
               <Input
+                value={this.state.caption}
                 type="textarea"
                 name="caption"
                 id="exampleText"
@@ -131,8 +146,14 @@ class FileUpload extends Component {
                 get posted.
               </FormText>
             </FormGroup>
-            <div className="btn-wrapper">
+            <div className={this.state.loading ? "btn-hide" : "btn-wrapper"}>
               <Button type="submit">Submit</Button>
+            </div>
+            <div className={this.state.loading ? "loading" : "load-hide"}>
+              <div className="load-wrapper">
+                <div class="loader"></div>
+                <p>Uploading doggo...</p>
+              </div>
             </div>
           </Form>
         </div>
