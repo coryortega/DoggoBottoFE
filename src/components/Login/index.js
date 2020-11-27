@@ -35,7 +35,7 @@ const Login = ({ history }) => {
             <div className="header-container">
                 <strong>♥</strong><h1>Please Login</h1><strong>♥</strong>
             </div>
-            <Form onSubmit={handleLogin} className="w-25" >
+            <Form onSubmit={handleLogin} >
                 <FormGroup>
                 <Label for="exampleEmail">Email</Label>
                 <Input type="email" name="email" id="exampleEmail" placeholder="Enter your email" />
@@ -44,7 +44,7 @@ const Login = ({ history }) => {
                 <Label for="examplePassword">Password</Label>
                 <Input type="password" name="password" id="examplePassword" placeholder="Enter your password" />
                 </FormGroup>
-                <Button className="w-25" type="submit">Login</Button>
+                <Button type="submit">Login</Button>
             </Form>
         </div>
     );
