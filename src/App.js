@@ -10,19 +10,19 @@ import { AuthProvider } from "./Auth";
 
 function App() {
   return (
+    <AuthProvider>
       <div className="App">
         <Router>
           <Header/>
           <Route exact path="/" component={SubmitPage}/>
           <Route exact path="/login" component={Login}/>
-          <AuthProvider>
             <PrivateRoute exact path="/admin" component={Admin}/>
-          </AuthProvider>
           <div class="footer">
             <p>Copyright DoggoBotto 2020</p>
           </div>
         </Router>
       </div>
+      </AuthProvider>
   );
 }
 
