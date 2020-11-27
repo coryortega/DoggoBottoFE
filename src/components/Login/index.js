@@ -32,20 +32,24 @@ const Login = ({ history }) => {
 
     return (
         <div className="login-container">
+          <div className="form">
             <div className="header-container">
                 <strong>♥</strong><h1>Please Login</h1><strong>♥</strong>
             </div>
             <Form onSubmit={handleLogin} >
+              <div className="form-group-continer">
                 <FormGroup>
-                <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="Enter your email" />
+                  <Label for="exampleEmail">Email:</Label>
+                  <Input type="email" name="email" id="exampleEmail" placeholder="Enter your email" />
+                  </FormGroup>
+                  <FormGroup>
+                  <Label for="examplePassword">Password:</Label>
+                  <Input type="password" name="password" id="examplePassword" placeholder="Enter your password" />
                 </FormGroup>
-                <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="Enter your password" />
-                </FormGroup>
-                <Button type="submit">Login</Button>
+              </div>
+              <Button type="submit">Login</Button>
             </Form>
+          </div>
         </div>
     );
   }
