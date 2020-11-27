@@ -4,7 +4,7 @@ import DoggoCard from "../DoggoCard/DoggoCard";
 import "./admin.css";
 
 export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
+
   const [doggos, setDoggos] = useState([]);
   const [query, setQuery] = useState("");
 

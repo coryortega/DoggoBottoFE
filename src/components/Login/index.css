@@ -4,7 +4,7 @@
     align-content: center;
     align-items: center;
     flex-direction: column;
-    height: 86%;
+    height: 87%;
 }
 
 h1 {
@@ -22,4 +22,17 @@ h1 {
 
 .header-container {
     display: flex;
+}
+
+.form form {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.form button {
+    width: 50%;
+}
+
+.form-group-continer {
+    text-align: left;
 }
