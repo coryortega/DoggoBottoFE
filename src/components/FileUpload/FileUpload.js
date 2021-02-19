@@ -138,6 +138,7 @@ class FileUpload extends Component {
                 name="file"
                 id="exampleFile"
                 encType="multipart/form-data"
+                accept=".jpg,.png,.jpeg"
                 onChange={this.handleFileUpload}
               />
               <FormText color="muted">
